@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
-  MAP_API: 'AIzaSyA6HdybIFUH9OubLXcJ1yYL3MJ4Tx4qtxI',
-  API_URL: '',
+  MAP_API: 'AIzaSyB00s6iH-m6D0rOxdiY1hZn9ZbyHGnoXkI',
+  API_URL:
+    'https://my-json-server.typicode.com/pratyayrudra/pothole-detector/potholes',
 };
