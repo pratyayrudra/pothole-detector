@@ -20,8 +20,20 @@ export class HomeComponent implements OnInit {
   }
 
   getData = () => {
-    this.dataService.getData().subscribe((data: any) => {
-      this.potholes = data;
+    this.dataService.checkCache().then((res) => {
+      if (res) {
+        console.log('Found in cache');
+        this.dataService.getData().subscribe((data: any) => {
+          this.potholes = data;
+        });
+      } else {
+        console.log('Not found in cache loading from DB');
+        this.dataService.loadData().then((res) => {
+          this.dataService.getData().subscribe((data: any) => {
+            this.potholes = data;
+          });
+        });
+      }
     });
   };
 
