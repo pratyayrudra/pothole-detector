@@ -84,12 +84,18 @@ export class UploadComponent implements OnInit {
       this.getPosition().then((pos) => {
         this.location.latitude = pos.lat;
         this.location.longitude = pos.lng;
+        console.log(this.location);
         console.log(`Positon: ${pos.lng} ${pos.lat}`);
         this.message = 'Got Geo Location...';
         this.perc = 40;
+        this.predict();
       });
+    } else {
+      this.predict();
     }
+  };
 
+  predict = async () => {
     this.message = 'Loading Model..';
     this.perc = 50;
     this.model = await tmImage.load(
