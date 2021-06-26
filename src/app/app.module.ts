@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { UploadComponent } from './upload/upload/upload.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyB00s6iH-m6D0rOxdiY1hZn9ZbyHGnoXkI',
+      apiKey: environment.MAP_API,
     }),
     HttpClientModule,
     FormsModule,
