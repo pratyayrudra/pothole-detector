@@ -64,6 +64,8 @@ export class UploadComponent implements OnInit {
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
         (resp) => {
+          this.location.latitude = resp.coords.latitude;
+          this.location.longitude = resp.coords.longitude;
           resolve({ lng: resp.coords.longitude, lat: resp.coords.latitude });
         },
         (err) => {
